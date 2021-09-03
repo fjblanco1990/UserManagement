@@ -1,0 +1,22 @@
+<form [formGroup]="sharedUserForm">
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" routerLink="home">Busqueda de usuarios</a>
+
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <li class="nav-item" routerLinkActive="active">
+                    <a class="nav-link" routerLink="/user-grpich">Grafica</a>
+                </li>
+            </ul>
+            <div class="d-flex">
+                <input #txtInput (keyup.enter)="getDetailUser(txtInput.value)" class="form-control me-2" type="search" placeholder="Buscar usuario" formControlName="SearchUser" aria-label="Search" [class.is-invalid]="(sharedUserForm.get('SearchUser').dirty || sharedUserForm.get('SearchUser').touched) && sharedUserForm.get('SearchUser').invalid"
+                />
+
+                <button (click)="getDetailUser(txtInput.value)" class="btn btn-outline-success" type="submit" [disabled]="sharedUserForm.invalid">
+                 Buscar
+               </button>
+            </div>
+        </div>
+    </nav>
+</form>

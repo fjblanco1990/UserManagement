@@ -1,0 +1,13 @@
+<div class="row row-cols-1 row-cols-md-3 g-4 pointer">
+    <div class="col" *ngFor="let user of usuarios">
+        <div class="card h-100" (click)="getDetailUser(user.login, user.id)">
+            <img [src]="user.avatar_url" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{user.login}}</h5>
+                <p class="card-text">
+                    <span class="text-muted">ID: {{user.id}}</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

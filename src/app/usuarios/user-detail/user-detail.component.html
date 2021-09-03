@@ -1,0 +1,24 @@
+<app-shared-error *ngIf="error" [isError]="true" [error]="error.message"></app-shared-error>
+
+<div class="row row-cols-1 row-cols-md-3 g-4 text-center" *ngIf="!error">
+    <div class="col">
+        <div class="card h-100">
+            <img [src]="userDetail.avatar_url" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{userDetail.login}}</h5>
+                <p class="card-text"> {{userDetail.html_url}} </p>
+                <p class="card-text"> {{userDetail.followers_url}} </p>
+                <p class="card-text"> {{userDetail.following_url}} </p>
+                <p class="card-text"> {{userDetail.company}} </p>
+                <p class="card-text"> {{userDetail.email}} </p>
+                <p class="card-text"> {{userDetail.location}} </p>
+                <p class="card-text">
+                    <span class="text-muted">ID: {{userDetail.id}}</span>
+                </p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">Public Repos {{userDetail.public_repos}} - Followers {{userDetail.followers}} </small>
+            </div>
+        </div>
+    </div>
+</div>
